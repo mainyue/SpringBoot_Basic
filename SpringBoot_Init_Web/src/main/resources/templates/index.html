@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Welcome Spring Boot！！！</h1>
+测试REST风格
+<form action="/user">
+    <input value="REST-GET 提交" type="submit">
+</form>
+<form action="/user" method="post">
+    <input value="REST-POST 提交" type="submit">
+</form>
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="delete">
+    <input value="REST-DELETE 提交" type="submit">
+</form>
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="put">
+    <input value="REST-PUT 提交" type="submit">
+</form>
+<br>
+<a href="/cars/sell;low=34;brand=byd,audi,yd">@MatrixVariable（矩阵变量）</a>
+<br>
+<a href="/cars/sell;low=34;brand=byd;brand=audi;brand=yd">@MatrixVariable（矩阵变量）</a>
+<br>
+<a href="/boss/1;age=20/2;age=19">@MatrixVariable（矩阵变量） /boss/{boosId}/{empId}</a>
+<br>
+
+<a href="/testParam/user/password?age=19">/testParam/{userId}/{password}?age=19</a>
+<br>
+<a href="/testParam?userName=test">/testParam.......</a>
+<br>
+测试封装POJO
+<form action="/saveuser" method="post">
+    姓名： <input name="userName" value="zhangsan"/><br>
+    年龄： <input name="age" value="18"/><br>
+    生日： <input name="birth" value="2019/12/10"/><br>
+    宠物姓名: <input name="pet.name" value="阿猫"/><br>
+    宠物年龄：<input name="pet.age" value="5"/><br>
+    <input type="submit" value="保存">
+</form>
+<form action="/saveconv" method="post">
+    姓名： <input name="userName" value="zhangsan"/><br>
+    年龄： <input name="age" value="18"/><br>
+    生日： <input name="birth" value="2019/12/10"/><br>
+    宠物： <input name="pet" value="阿狗,3">
+    <input type="submit" value="保存">
+</form>
+</body>
+</html>
